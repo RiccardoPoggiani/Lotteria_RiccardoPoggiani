@@ -6,6 +6,8 @@
   A.S.: 2024/25
 </p>
 
+---
+
 ### Scopo del Progetto
 Il progetto **Lotto Simulator** è una simulazione di un'estrazione della lotteria in cui vengono estratti numeri casuali e verificati i vincitori. Ogni giocatore sceglie un numero e, se questo coincide con il numero estratto, vince. L'obiettivo del progetto è creare un ambiente multi-thread in cui i giocatori e l'estrazione agiscono in parallelo. Il programma utilizza thread per gestire sia l'estrazione dei numeri sia la partecipazione dei giocatori.
 
