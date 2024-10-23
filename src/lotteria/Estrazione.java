@@ -21,7 +21,7 @@ public class Estrazione extends Thread {
     }
 
     //Metodo per visualizzare la matrice dei numeri estratti
-    public synchronized void stampaNumeriEstratti() {
+    public void stampaNumeriEstratti() {
         System.out.print("I numeri estratti fino ad ora sono: ");
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -33,7 +33,7 @@ public class Estrazione extends Thread {
     }
     
     //Metodo per visualizzare i vincitori dell'estrazione
-    public synchronized void stampaVincitoriEstrazione() {
+    public void stampaVincitoriEstrazione() {
        System.out.print("I giocatori vincitori dell'estrazione sono: ");
        for(Giocatore vincitore : vincitori){
            if (vincitore != null) {
@@ -42,18 +42,9 @@ public class Estrazione extends Thread {
        }
        System.out.println();
     }
-    
-    public String getVincitore(int num){
-        for (int i = 0; i < N; i++) {
-            if (num == i){
-                return vincitori[i].getNomeGiocatore();
-            }
-        }
-        return "";
-    }
 
     // Metodo per verificare il numero scelto dal giocatore e determinare i vincitori
-    public synchronized void verifica(Giocatore giocatore, int numeroScelto) {
+    public void verifica(Giocatore giocatore, int numeroScelto) {
         if (numeroScelto == numeroEstratto) {
             System.out.println(giocatore.getNomeGiocatore() + " ha scelto il numero " + numeroScelto + ", ha vinto l'estrazione!");
             for (int i = 0; i < vincitori.length; i++) {
@@ -81,28 +72,32 @@ public class Estrazione extends Thread {
     
 
     //Metodo per eseguire il thread
-    public synchronized void run() {
+    public void run() {
         
         System.out.println("Inizio dell'estrazione...");
         
         boolean numeroValido = false;
         while (numeroValido == false) {
-            numeroEstratto = Random.nextInt(9); // Genera numero da 0 a 9
+            numeroEstratto = Random.nextInt(N*N); 
             if (numeroGiaEstratto(numeroEstratto) == false) {
                 numeroValido = true;  // Numero non estratto in precedenza
             }
         }
         
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
+        boolean numeroInserito = false;
+        for (int i = 0; i < N && !numeroInserito; i++) {
+            for (int j = 0; j < N && !numeroInserito; j++) {
                 if (numeriEstratti[i][j] == 0) {
                     numeriEstratti[i][j] = numeroEstratto;
-                    break;
+                    numeroInserito = true;
                 }
             }
         }
         
         System.out.println("Il numero estratto è " + numeroEstratto);
+
         System.out.println("Fine dell'estrazione...");
+
+        //stampa l'insieme di numeristratti e dei vincitori a seguito della verifica per ogni giocatore
     }
 }

@@ -6,6 +6,8 @@
 package lotteria;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 //@author Riccardo Poggiani
 
@@ -14,29 +16,39 @@ public class Giocatore extends Thread{
     private int idGiocatore;
     private String nomeGiocatore;
     private Estrazione estrazione;
+    private int N;
     private Random Random;
       
     //Metodo costruttore
-    public Giocatore(int idGiocatore,String nomeGiocatore, Estrazione estrazione) {
+    public Giocatore(int idGiocatore,String nomeGiocatore, int N, Estrazione estrazione) {
         this.idGiocatore = idGiocatore;
         this.nomeGiocatore = nomeGiocatore;
         this.estrazione = estrazione;
+        this.N = N;
         Random = new Random();
     }
 
     //Metodo per eseguire il thread
-    public synchronized void run() {
+    public void run() {
 
         // scelta del numero da giocare
-        int numeroScelto = Random.nextInt(5);
-        System.out.println("Il numero scelto dal giocatore " + idGiocatore + " è " + numeroScelto);
-       
-       // verifica del risutlato
-       estrazione.verifica(this, numeroScelto);
-    }
+        int numeroScelto = Random.nextInt(N*N);
+        System.out.println("Il numero scelto dal giocatore " + nomeGiocatore + " è " + numeroScelto);
 
-    public int getIdGiocatore() {
-        return idGiocatore;
+        for(int i=3; i>0; i--){
+            System.out.println(i);
+            try {
+                Giocatore.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Giocatore.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println("Errore sleep");
+            }
+        }
+       
+       // verifica del risultato
+       estrazione.verifica(this, numeroScelto);
+
+       System.out.println("Fine verifica per il giocatore " + nomeGiocatore);
     }
 
     public String getNomeGiocatore() {
