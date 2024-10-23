@@ -1,5 +1,4 @@
-## Lotteria
-
+# Lotteria
 Poggiani Riccardo
 
 5AINF
