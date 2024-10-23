@@ -1,10 +1,8 @@
-<h1 align="center">Lotteria</h1>
+# Lotteria
 
-<p align="center" style="font-family: monospace">
-  Poggiani Riccardo<br>
-  5AINF<br>
-  A.S.: 2024/25
-</p>
+Poggiani Riccardo
+5AINF
+A.S.: 2024/25
 
 ---
 
