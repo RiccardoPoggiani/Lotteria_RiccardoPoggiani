@@ -15,26 +15,26 @@ Il progetto **Lotteria** è una simulazione di un'estrazione della lotteria in c
 ### Principali Classi Usate
 
 1. **Estrazione**: Classe che simula l'estrazione di numeri. Estende la classe `Thread` per eseguire l'estrazione in parallelo con i giocatori.
-    - **Attributi principali**:
-      - `numeroEstratto`: Numero corrente estratto.
-      - `numeriEstratti`: Matrice 2D che tiene traccia dei numeri estratti.
-      - `vincitori`: Array che tiene traccia dei giocatori vincenti.
-      - `N`: Dimensione della matrice di numeri estratti.
+    - **Attributi**:
+       - `numeroEstratto`: Numero corrente estratto.
+       - `numeriEstratti`: Matrice 2D che tiene traccia dei numeri estratti.
+       - `vincitori`: Array che tiene traccia dei giocatori vincenti.
+       - `N`: Dimensione della matrice di numeri estratti.
       
-    - **Metodi principali**:
-      - `stampaNumeriEstratti()`: Stampa i numeri estratti fino a quel momento.
-      - `stampaVincitoriEstrazione()`: Stampa i giocatori che hanno vinto.
-      - `verifica(Giocatore giocatore, int numeroScelto)`: Metodo che verifica se il numero scelto dal giocatore coincide con quello estratto. Se il numero coincide, il giocatore è considerato vincitore.
-      - `run()`: Metodo eseguito dal thread per estrarre un numero casuale e verificarne la validità.
+    - **Metodi**:
+       - `stampaNumeriEstratti()`: Stampa i numeri estratti fino a quel momento.
+       - `stampaVincitoriEstrazione()`: Stampa i giocatori che hanno vinto.
+       - `verifica(Giocatore giocatore, int numeroScelto)`: Metodo che verifica se il numero scelto dal giocatore coincide con quello estratto. Se il numero coincide, il giocatore è considerato vincitore.
+       - `run()`: Metodo eseguito dal thread per estrarre un numero casuale e verificarne la validità.
       
 2. **Giocatore**: Classe che rappresenta i giocatori partecipanti alla lotteria. Anch'essa estende la classe `Thread`, permettendo a ogni giocatore di agire in parallelo con l'estrazione.
-    - **Attributi principali**:
-      - `idGiocatore`: ID del giocatore.
-      - `nomeGiocatore`: Nome del giocatore.
-      - `estrazione`: Riferimento alla classe `Estrazione` per verificare il numero scelto.
+    - **Attributi**:
+        - `idGiocatore`: ID del giocatore.
+        - `nomeGiocatore`: Nome del giocatore.
+        - `estrazione`: Riferimento alla classe `Estrazione` per verificare il numero scelto.
       
-    - **Metodi principali**:
-      - `run()`: Metodo che gestisce la partecipazione del giocatore, scegliendo un numero casuale e verificandolo con l'estrazione.
+    - **Metodi**:
+       - `run()`: Metodo che gestisce la partecipazione del giocatore, scegliendo un numero casuale e verificandolo con l'estrazione.
 
 3. **Lotteria**: Classe che gestisce l'intero flusso dell'applicazione, dalla creazione dei thread (estrazione e giocatori) alla stampa dei risultati finali.
 
