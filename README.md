@@ -9,6 +9,8 @@
 ### Scopo del Progetto
 Il progetto **Lotto Simulator** è una simulazione di un'estrazione della lotteria in cui vengono estratti numeri casuali e verificati i vincitori. Ogni giocatore sceglie un numero e, se questo coincide con il numero estratto, vince. L'obiettivo del progetto è creare un ambiente multi-thread in cui i giocatori e l'estrazione agiscono in parallelo. Il programma utilizza thread per gestire sia l'estrazione dei numeri sia la partecipazione dei giocatori.
 
+---
+
 ### Principali Classi Usate
 
 1. **Estrazione**: Classe che simula l'estrazione di numeri. Estende la classe `Thread` per eseguire l'estrazione in parallelo con i giocatori.
@@ -35,6 +37,8 @@ Il progetto **Lotto Simulator** è una simulazione di un'estrazione della lotter
 
 3. **Lotteria**: Classe che gestisce l'intero flusso dell'applicazione, dalla creazione dei thread (estrazione e giocatori) alla stampa dei risultati finali.
 
+---
+
 ### Dettaglio del Metodo `verifica()` nella Classe Estrazione
 
 Il metodo `verifica(Giocatore giocatore, int numeroScelto)` si occupa di controllare se il numero scelto da un giocatore coincide con quello estratto durante il thread di `Estrazione`. Se il numero coincide, il giocatore viene aggiunto alla lista dei vincitori. Di seguito una descrizione dettagliata del metodo:
@@ -50,6 +54,8 @@ Il metodo `verifica(Giocatore giocatore, int numeroScelto)` si occupa di control
   
 - **Thread-safety**: Essendo il metodo `verifica()` sincronizzato, previene che più thread accedano contemporaneamente alla verifica e all'aggiornamento dei vincitori.
 
+---
+
 ### Librerie Utilizzate
 
 Il progetto si basa sulle librerie standard di Java:
@@ -57,12 +63,16 @@ Il progetto si basa sulle librerie standard di Java:
 - `java.util.Scanner`: Utilizzata per leggere l'input dell'utente all'inizio del programma.
 - `java.util.logging`: Utilizzata per gestire eventuali eccezioni.
 
+---
+
 ### Scenari Alternativi di Funzionamento
 
 1. **Nessun Vincitore**: Se nessuno dei giocatori sceglie il numero estratto, il programma segnala che tutti hanno perso.
 2. **Numero già estratto**: Il metodo `numeroGiaEstratto()` controlla se il numero è già stato estratto in precedenza, evitando così duplicati durante il gioco.
 3. **Interruzioni nei Thread**: Se un thread viene interrotto (ad esempio, durante il `join()`), viene gestito attraverso blocchi `try-catch`, e viene loggato un messaggio di errore.
 4. **Matrice non rettangolare**: Se l'utente inserisce una dimensione non valida per la matrice dei numeri, il programma potrebbe non comportarsi correttamente. Tuttavia, in questo caso, il progetto si affida alla validità dell'input inserito dall'utente.
+
+---
 
 ### Commento sull'Esecuzione
 
