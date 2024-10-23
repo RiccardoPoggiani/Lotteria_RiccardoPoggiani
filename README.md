@@ -70,5 +70,3 @@ Il progetto si basa sulle librerie standard di Java:
 2. Una volta avviata l'estrazione, il numero estratto viene verificato rispetto ai numeri scelti dai quattro giocatori.
 3. L'estrazione avviene in un thread separato, così come la partecipazione di ciascun giocatore.
 4. Al termine del gioco, vengono stampati i vincitori e l'estrazione si conclude.
-
-L'esecuzione parallela garantisce che l'estrazione e i giocatori procedano in modo indipendente, ma sincronizzato, grazie all'uso di `synchronized`.
