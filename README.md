@@ -1,7 +1,9 @@
 ## Lotteria
 
 Poggiani Riccardo
+
 5AINF
+
 A.S.: 2024/25
 
 ---
