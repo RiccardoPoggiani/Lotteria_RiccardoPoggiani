@@ -44,9 +44,9 @@ Il metodo `verifica(Giocatore giocatore, int numeroScelto)` si occupa di control
   - `int numeroScelto`: Il numero scelto dal giocatore.
 
 - **Funzionamento**:
-   1. Controlla se `numeroScelto` coincide con `numeroEstratto`.
-   2. Se coincidono, il giocatore ha vinto e viene aggiunto al primo posto disponibile nell'array `vincitori`.
-   3. Se non coincidono, il giocatore ha perso.
+  I. Controlla se `numeroScelto` coincide con `numeroEstratto`.
+  II. Se coincidono, il giocatore ha vinto e viene aggiunto al primo posto disponibile nell'array `vincitori`.
+  III. Se non coincidono, il giocatore ha perso.
   
 - **Thread-safety**: Essendo il metodo `verifica()` sincronizzato, previene che più thread accedano contemporaneamente alla verifica e all'aggiornamento dei vincitori.
 
