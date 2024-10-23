@@ -54,6 +54,7 @@ Il metodo `verifica()` controlla se il numero scelto da un giocatore coincide co
 - **Funzionamento**:
   1. Se `numeroScelto` corrisponde a `numeroEstratto`, il giocatore è vincitore.
   2. Tramite un ciclo for che scorre l'array `vincitori` si aggiunge il giocatore nella prima cella libera.
+  3. In entrambi i casi si stampa a schermo una stringa che indica se il giocatore ha vinto o perso.
 
 ---
 
@@ -63,7 +64,7 @@ Il progetto utilizza le seguenti librerie standard di Java:
 - `java.util.Scanner`: Per l'input dell'utente.
 - `java.util.logging`: Per la gestione degli errori e delle eccezioni.
 - `java.util.level`: Fornisce i diversi livelli di gravità per i messaggi di log.
-- `java.util.InputMismatchException`: Gestire l'eccezione che si verifica quando l'input dell'utente non corrisponde al tipo di dato atteso.
+- `java.util.InputMismatchException`: Gestisce l'eccezione che si verifica quando l'input dell'utente non corrisponde al tipo di dato atteso.
 
 ---
 
