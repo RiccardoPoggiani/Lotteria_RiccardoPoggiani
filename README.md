@@ -54,7 +54,6 @@ Il metodo `verifica()` controlla se il numero scelto da un giocatore coincide co
 - **Funzionamento**:
   1. Se `numeroScelto` corrisponde a `numeroEstratto`, il giocatore è vincitore.
   2. Tramite un ciclo for che scorre l'array `vincitori` si aggiunge il giocatore nella prima cella libera.
-  3. 
 
 ---
 
