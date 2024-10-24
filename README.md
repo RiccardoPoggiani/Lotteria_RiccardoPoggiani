@@ -83,7 +83,7 @@ Il progetto utilizza le seguenti librerie standard di Java:
 2. **Numero già estratto**: La funzione `numeroGiaEstratto()` evita duplicati di numeri estratti.
 3. **Gestione degli errori**: Se un thread viene interrotto, l'errore viene gestito con blocchi `try-catch`. Le eccezioni gestite includono:
   - `InterruptedException`: Si verifica quando un thread è interrotto mentre sta aspettando di completare un'operazione, ad esempio durante il metodo join(). In questo caso, viene registrato un messaggio di errore e l'applicazione continua a funzionare.
-  - `InputMismatchException`: Si verifica quando l'utente inserisce un input non valido (come una lettera al posto di un numero) durante la lettura dell'input con Scanner. Questa eccezione è gestita per chiedere nuovamente all'utente un valore valido.
+  - `InputMismatchException`: Si verifica quando l'utente inserisce un input non valido (come una lettera al posto di un numero) durante la lettura dell'input con Scanner.
 
 ---
 
